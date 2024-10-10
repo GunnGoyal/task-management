@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("image.png");
+           
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            justify-content: flex-start;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+            outline: none;
+        }
+        .tab button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<!-- <img src="logo.png" alt="logo"> -->
+<div class="login-container">
+    <div class="tab">
+        <button id="admin-tab" class="active" onclick="showForm('admin')">Admin</button>
+        <button id="employee-tab" onclick="showForm('employee')">Employee</button>
+    </div>
+
+    <!-- Admin Login Form -->
+    <form id="admin-form" action="admin.html" method="get" onsubmit="loginUser('admin'); return true;">
+        <div class="form-group">
+            <label for="admin-id">Admin Name</label>
+            <input type="text" id="admin-id" name="admin-id" required>
+        </div>
+        <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" name="admin-password" required>
+        </div>
+        <button type="submit" class="login-button">Login as Admin</button>
+    </form>
+
+
+    <!-- Employee Login Form -->
+    <form id="employee-form" action="index1.html" method="get" onsubmit="loginUser('employee'); return true;" style="display: none;">
+        
+        <div class="form-group">
+            <label for="employee-id">Employee Name</label>
+            <input type="text" id="employee-id" name="employee-id" required>
+        </div>
+        <div class="form-group">
+            <label for="employee-password">Password</label>
+            <input type="password" id="employee-password" name="employee-password" required>
+        </div>
+        <button type="submit" class="login-button">Login as Employee</button>
+    </form>
+
+    <!-- Message Section -->
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+    // Arrays to store admin and employee usernames
+    let adminUsers = [];
+    let employeeUsers = [];
+
+    // Function to display the appropriate form (Admin or Employee)
+    function showForm(type) {
+        const adminTab = document.getElementById('admin-tab');
+        const employeeTab = document.getElementById('employee-tab');
+        const adminForm = document.getElementById('admin-form');
+        const employeeForm = document.getElementById('employee-form');
+
+        if (type === 'admin') {
+            adminTab.classList.add('active');
+            employeeTab.classList.remove('active');
+            adminForm.style.display = 'block';
+            employeeForm.style.display = 'none';
+        } else {
+            employeeTab.classList.add('active');
+            adminTab.classList.remove('active');
+            adminForm.style.display = 'none';
+            employeeForm.style.display = 'block';
+        }
+    }
+
+    // Function to handle login for both Admins and Employees
+    function loginUser(userType) {
+        let username;
+        let message;
+        if (userType === 'admin') {
+            username = document.getElementById('admin-id').value;
+
+            // Check if Admin user is already in the adminUsers array
+            if (adminUsers.includes(username)) {
+                message = `Welcome back, Admin ${username}!`;
+            } else {
+                // Add new admin to adminUsers array
+                adminUsers.push(username);
+                message = `Welcome, Admin ${username}! You are now logged in.`;
+            }
+        } else {
+            username = document.getElementById('employee-id').value;
+
+            // Check if Employee user is already in the employeeUsers array
+            if (employeeUsers.includes(username)) {
+                message = `Welcome back, Employee ${username}!`;
+            } else {
+                // Add new employee to employeeUsers array
+                employeeUsers.push(username);
+                message = `Welcome, Employee ${username}! You are now logged in.`;
+            }
+        }
+
+        // Display the message
+        document.getElementById('message').textContent = message;
+    }
+</script>
+
+</body>
+</html>

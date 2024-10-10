@@ -1,0 +1,200 @@
+:root {
+    --bg: #ebf0f7;
+    --header: #fbf4f6;
+    --text: #2e2e2f;
+    --white: #ffffff;
+    --light-grey: #c4cad3;
+    --tag-1: #ceecfd;
+    --tag-1-text: #2e87ba;
+    --tag-2: #d6ede2;
+    --tag-2-text: #13854e;
+    --tag-3: #ceecfd;
+    --tag-3-text: #2d86ba;
+    --tag-4: #f2dcf5;
+    --tag-4-text: #a734ba;
+    --purple: #7784ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+.app {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: inline-block;
+}
+
+.project-tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive column size */
+    width: 100%;
+    grid-column-gap: 1.5rem;
+    gap: 20px; /* Add gap between columns */
+}
+
+.project-info {
+    padding: 2rem 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.project-info h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.project-participants {
+    display: flex;
+    align-items: center;
+}
+
+.project-participants span {
+    width:fit-content;
+    height: 30px;
+    display: inline-block;
+    background: var(--purple);
+    border-radius: 10%;
+  border: 2px solid black;
+  box-shadow: #2e2e2f;
+    padding: 5px;
+}
+.project-participants span a{
+    color:#221f00;
+    text-decoration: none;
+    
+}
+
+
+
+.project-column-heading {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header); /* Add background color */
+    color: var(--text); /* Make sure text color is visible */
+    font-weight: bold;
+    border-radius: 6px; /* Rounded corners for the heading */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+.project-column-heading__title {
+    font-size: 18px;
+    color: var(--text); /* Ensure text is visible */
+}
+
+.project-column-heading__options {
+    background: transparent;
+    color: var(--light-grey);
+    font-size: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.task {
+    cursor: move;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    margin-bottom: 1rem;
+    border: 3px dashed transparent;
+}
+
+.task:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color: rgba(162, 179, 207, 0.2) !important;
+}
+
+.task p {
+    font-size: 15px;
+    margin: 1.2rem 0;
+}
+
+.task__tag {
+    border-radius: 100px;
+    padding: 2px 13px;
+    font-size: 12px;
+}
+
+.task__tag--copyright {
+    color: var(--tag-4-text);
+    background-color: var(--tag-4);
+}
+
+.task__tag--design {
+    color: var(--tag-3-text);
+    background-color: var(--tag-3);
+}
+
+.task__tag--illustration {
+    color: var(--tag-2-text);
+    background-color: var(--tag-2);
+}
+
+.task__tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task__options {
+    background: transparent;
+    border: 0;
+    color: var(--light-grey);
+    font-size: 17px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1000px) {
+    .project {
+        max-width: 90%;
+    }
+
+    .project-tasks {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .project-tasks {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}

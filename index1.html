@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class='app'>
+        <main class='project'>
+            <div class='project-info'>
+                <img src="logo.png" height="150px" width="225px">
+                <h1>Employee Dashboard</h1>
+                <div class='project-participants'>
+                    <span><a href="index.html">Logout</a></span>
+                    
+                </div>
+            </div>
+
+            <div class='project-tasks'>
+                <!-- Task Ready Column -->
+                <div class='project-column' data-status="task-ready">
+                    <div class='project-column-heading'>
+                        <h2 class='p    roject-column-heading__title'>Task Ready</h2>
+                        <button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="task-container">            
+                        <div class='task' draggable='true'>
+                        <div class='task__tags'><span class='task__tag task__tag--copyright'>Maketing Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                    <p>Manage employee engagement surveys</p>
+                </div>
+                
+                          <div class='task' draggable='true'>
+                    <div class='task__tags'><span class='task__tag task__tag--copyright'>Maketing Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                    <p>Support company culture initiatives</p>
+                    
+                </div>
+        
+                <div class='task' draggable='true'>
+                    <div class='task__tags'><span class='task__tag task__tag--design'>Finance Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                    <p>Manage budgeting and forecasting</p>
+                    
+                </div>
+                
+                <div class='task' draggable='true'>
+                    <div class='task__tags'><span class='task__tag task__tag--illustration'>Product Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                    <p>Create tools for diversity and inclusion tracking</p>
+                   
+                </div>
+                <div class='task' draggable='true'>
+                    <div class='task__tags'><span class='task__tag task__tag--illustration'>Product Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                    <p>Develop recruitment tools</p>
+                   
+                </div>
+            </div>
+                </div>
+
+                <!-- In Progress Column -->
+                <div class='project-column' data-status="in-progress">
+                    <div class='project-column-heading'>
+                        <h2 class='project-column-heading__title'>In Progress</h2>
+                        <button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="task-container">
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--copyright'>Maketing Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Support diversity and inclusion events</p>
+                          
+                        </div>
+                        
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--illustration'>Product Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Develop compensation tools</p>
+                           
+                        </div>
+                        
+                         <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--design'>Finance Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Prepare financial statements</p>
+                        </div> 
+                        
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--design'>Finance Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Track and reconcile accounts</p>
+                        </div>
+                          </div>
+                </div>
+
+                <!-- Needs Review Column -->
+                <div class='project-column' data-status="needs-review">
+                    <div class='project-column-heading'>
+                        <h2 class='project-column-heading__title'>Needs Review</h2>
+                        <button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="task-container">      
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--illustration'>Product team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Create performance management tools</p>
+                              </div>
+                    
+                              <div class='task' draggable='true'>
+                                  <div class='task__tags'><span class='task__tag task__tag--copyright'>Maketing Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                                  <p>Design the about page.</p>
+                                </div>
+                              <div class='task' draggable='true'>
+                                  <div class='task__tags'><span class='task__tag task__tag--design'>Finance Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                                  <p>Implement financial controls</p>
+                                </div>
+                                <div class='task' draggable='true'>
+                                    <div class='task__tags'><span class='task__tag task__tag--illustration'>Product team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                                    <p>Comply with financial regulations</p>
+                                      </div>
+                            </div>
+                </div>
+
+                <!-- Done Column -->
+                <div class='project-column' data-status="done">
+                    <div class='project-column-heading'>
+                        <h2 class='project-column-heading__title'>Done</h2>
+                        <button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                    <div class="task-container">
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--copyright'>Maketing Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Support diversity and inclusion events</p>
+                        </div>
+                        
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--design'>Finance Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Comply with financial regulations</p>
+                        </div>
+                   
+                        <div class='task' draggable='true'>
+                            <div class='task__tags'><span class='task__tag task__tag--illustration'>Product Team</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                            <p>Enhance employee development programs</p>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
